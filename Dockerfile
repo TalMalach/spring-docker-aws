@@ -1,5 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:8
 EXPOSE 8080
-ARG JAR_FILE=target/demo-app-1.0.0.jar
-ADD ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ADD target/spring-boot-docker.jar spring-boot-docker.jar 
+ENTRYPOINT ["java","-jar","/spring-boot-docker.jar"]
