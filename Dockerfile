@@ -1,6 +1,6 @@
-FROM openjdk:11
+FROM adoptopenjdk:11-jre-hotspot
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} application.jar
 EXPOSE 8080
-ADD target/spring-boot-docker.jar spring-boot-docker.jar
-ENTRYPOINT ["java","-jar","/spring-boot-docker.jar"]
-
+ENTRYPOINT ["java","-jar","/application.jar"]
 
